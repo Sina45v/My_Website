@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block body %}
+    <!-- Main Content -->
+    <main>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search posts...">
+            <button type="submit">Search</button>
+        </div>
+
+        <!-- Post Grid -->
+        {% for post in posts %}
+        <div class="posts-grid">
+            <!-- Post Boxes -->
+            <div class="post-container">
+                <a href="{{ post.get_absolute_url }}"><h2>{{ post.title|title }}</h2></a>
+                <p>{{ post.content }}</p>
+                <div class="post-meta">
+                    <span>By <strong>{{ post.author }}</strong></span> |
+                    <span>Published on {{ post.created_at }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Sina45v</p>
+    </footer>
+{% endblock %}

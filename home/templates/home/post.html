@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post_detail.css' %}">
+{% endblock %}
+
+{% block body %}
+    <!-- Main Content -->
+    <main>
+        <div class="post-detail-container">
+            <h1>{{ post.title }}</h1>
+            <div class="post-meta">
+                <span><a href="{% url "account:profile" post.author.id %}">By <strong>{{ post.author }}</strong></a></span> |
+                <span>
+                    {% if post.updated_at %}
+                        Updated on {{ post.updated_at|date:"F d, Y" }}
+                    {% else %}
+                        Published on {{ post.updated_at|date:"F d, Y" }}
+                    {% endif %}
+                </span>
+            </div>
+            <div class="post-content">
+                {{ post.content|linebreaks }}
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Sina45v</p>
+    </footer>
+{% endblock %}

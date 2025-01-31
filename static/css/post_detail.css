@@ -1,0 +1,67 @@
+/* post_detail.css */
+
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 80px; /* Adjust based on navbar height */
+}
+
+.post-detail-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.post-detail-container h1 {
+    font-size: 2.5em;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.post-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #888;
+}

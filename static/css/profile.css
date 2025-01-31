@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.user-panel {
+    background-color: #1f1f1f;
+    padding: 10px;
+    text-align: center;
+}
+
+.user-panel span {
+    color: #bb86fc;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.user-panel a {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #03dac6;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #1f1f1f;
+    margin: 20px 0; /* Add margin to ensure it's not sticking to the navbar */
+}
+
+.add-post {
+    background-color: #bb86fc;
+    color: #1f1f1f;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.search-bar input {
+    margin-left: 10px;
+    padding: 5px;
+    width: 200px;
+    background-color: #2b2b2b;
+    border: 1px solid #444;
+    color: #e0e0e0;
+}
+
+.submit-search {
+    background-color: #bb86fc;
+    color: #1f1f1f;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+th {
+    background-color: #2b2b2b;
+}
+
+.topic {
+    font-weight: bold;
+    color: #bb86fc;
+    font-size: 18px;
+    text-decoration: none; /* Remove underline */
+}
+
+.topic a {
+    color: #bb86fc; /* Make link text purple */
+    text-decoration: none; /* Remove underline */
+}
+
+.topic a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.actions {
+    text-align: center;
+}
+
+.update {
+    background-color: #03dac6;
+    color: #1f1f1f;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #cf6679;
+    color: #1f1f1f;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+{% block body %}
+<div class="user-panel">
+    <span class="user">{{ user.username }}</span>
+    {% if request.user.id == user.id %}
+    <a href="">Switch account</a>
+    <a href="">Change password</a>
+    <a href="{% url "account:logout" %}">Logout</a>
+    {% endif %}
+</div>
+<div class="search-bar">
+    {% if request.user.id == user.id %}
+    <a href="{% url "home:post_create" %}"><button class="add-post">Create a new post</button></a>
+    {% endif %}
+    <input type="text" placeholder="SEARCH...">
+    <button type="submit" class="submit-search">Search</button>
+</div>
+{% if not posts %}
+<p>User does not have any posts</p>
+{% else %}
+<table>
+    <thead>
+        <tr>
+            <th>Topics</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <td class="topic"><a href="{% url "home:post" post.id %}">{{ post.title }}</a></td>
+            {% if request.user.id == user.id %}
+            <td class="actions">
+                <a href="{% url "home:post_update" post.id %}"><button class="update">Update</button></a>
+                <a href="{% url "home:post_delete" post.id %}"><button class="delete">Delete</button></a>
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+{% endblock %}
